@@ -1,0 +1,284 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package miniproject1;
+
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author DANCELV_ICS102
+ */
+public class Miniproject1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+               
+        int money=0;
+        int correctAnswers=0;
+        
+        String greetings=JOptionPane.showInputDialog("Are you ready to get new knowledge?");
+        
+        String response;
+        JOptionPane.showMessageDialog(null,"There are 3 consecutive levels:"+"\nEASY"+"\nMEDIUM"+"\nHARD");
+        
+        String response2;
+        JOptionPane.showMessageDialog(null,"Let's start with EASY LEVEL, GOODLUCK!"+"\nYou can get 100 money prize each question if you get the correct answer");
+        
+        //EASY LEVEL
+        String easyLevels1=JOptionPane.showInputDialog("How many planets in Solar Systems?"+"\n1. eight"+"\n2. nine"+"\n3. ten"+"\n4. six");
+       
+        int ows=Integer.parseInt(easyLevels1);
+                
+        int eight=1;
+        int nine=2;
+        int ten=3;
+        int six=4;
+        
+        if (ows==1) {
+            money+=100;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+         String easyLevels2=JOptionPane.showInputDialog("Planet that called Gas Planet?"+"\n1. Mars"+"\n2.Jupiter"+"\n3.Mercury"+"\n4.Earth");
+       
+        int ows1=Integer.parseInt(easyLevels2);
+                
+        int mars=1;
+        int jupiter=2;
+        int mercury=3;
+        int earth=4;
+        
+        if (ows1==2) {
+            money+=100;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+         String easyLevels3=JOptionPane.showInputDialog("Which is the second planet from the sun?"+"\n1. Mars"+"\n2.Jupiter"+"\n3.Mercury"+"\n4.Venus");
+       
+        int ows2=Integer.parseInt(easyLevels3);
+                
+        int mars1=1;
+        int jupiter2=2;
+        int mercury3=3;
+        int venus=4;
+        
+        if (ows2==4) {
+            money+=100;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //MEDIUM LEVEL
+        
+        String response3;
+        JOptionPane.showMessageDialog(null,"GOOD! Now let's move on to MEDIUM LEVEL, GOODLUCK!"+"\nYou can get 200 money prize each question if you get the correct answer");
+        
+        //medQ1
+        String mediumLevels=JOptionPane.showInputDialog("How old is the Universe?"+"\n1. 10.7 billion years ago"
+                +"\n2. 9.7 billion years ago"+"\n3. 13.7 million years ago"+"\n4. 13.7 billion years ago");
+       
+        int ows3=Integer.parseInt(mediumLevels);
+                
+        int bill1=1;
+        int bill2=2;
+        int bill3=3;
+        int bill4=4;
+        
+        if (ows3==4) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //medQ2
+        String mediumLevels1=JOptionPane.showInputDialog("How many constellations are there?"+"\n1. 80"
+                +"\n2. 88"+"\n3. 90"+"\n4. 81");
+       
+        int ows4=Integer.parseInt(mediumLevels1);
+                
+        int num1=1;
+        int num2=2;
+        int num3=3;
+        int num4=4;
+        
+        if (ows4==2) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //medQ3
+         String mediumLevels2=JOptionPane.showInputDialog("What are the storms produced by the sun called?"+"\n1. Solar Flare"
+                +"\n2. Solar Wind"+"\n3. Solar Storm"+"\n4. Solar Energy");
+       
+        int ows5=Integer.parseInt(mediumLevels2);
+                
+        int solarF=1;
+        int solarW=2;
+        int solarS=3;
+        int solarE=4;
+        
+        if (ows5==3) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //medQ4
+        String mediumLevels3=JOptionPane.showInputDialog("What is the only planet not named after a God?"+"\n1. Earth"
+                +"\n2. Jupiter"+"\n3. Saturn"+"\n4. Neptune");
+       
+        int ows6=Integer.parseInt(mediumLevels3);
+                
+        int earth1=1;
+        int jupiter1=2;
+        int saturn1=3;
+        int neptune1=4;
+        
+        if (ows6==1) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //HARD LEVEL
+        String response4;
+        JOptionPane.showMessageDialog(null,"VERY GOOD! Now let's move on to HARD LEVEL, GOODLUCK!"+"\nYou can get 500 money prize each question if you get the correct answer");
+        
+        //hardQ1
+        String hardLevels=JOptionPane.showInputDialog("One of the largest volcanos in our solar system-if not the largest-is\n" +
+"named Olympus Mons. This volcano is located on: "+"\n1. Jupiter's moon Callisto"
+                +"\n2. Venus"+"\n3. Saturn's moon Titan"+"\n4. Mars");
+       
+        int ows7=Integer.parseInt(hardLevels);
+                
+        int moonCall=1;
+        int venus2=2;
+        int moonTitan=3;
+        int mars2=4;
+        
+        if (ows7==4) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ2
+         String hardLevels1=JOptionPane.showInputDialog("The sunspot cycle is? "+"\n1. 3 years"
+                +"\n2. 11 years"+"\n3. 26 years"+"\n4. 49 years");
+       
+        int ows8=Integer.parseInt(hardLevels1);
+                
+        int year1=1;
+        int year2=2;
+        int year3=3;
+        int year4=4;
+        
+        if (ows8==2) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ3
+        String hardLevels2=JOptionPane.showInputDialog("The Hertzsprung-Russel Diagram of stars DIRECTLY compares\n" +
+"what TWO of the following properties of stars? "+"\n1. size"
+                +"\n2. temperature"+"\n3. luminosity"+"\n4. density");
+       
+        int ows9=Integer.parseInt(hardLevels2);
+                
+        int size=1;
+        int temp=2;
+        int luminosity=3;
+        int density=4;
+        
+        if (ows9==3) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ4
+         String hardLevels3=JOptionPane.showInputDialog("The andromeda Galaxy is which of the following types of galaxies?"+"\n1. elliptical"
+                +"\n2. spiral"+"\n3. barred-spiral"+"\n4. irregular");
+       
+        int ows10=Integer.parseInt(hardLevels3);
+                
+        int elliptical=1;
+        int spiral=2;
+        int barredspiral=3;
+        int irregular=4;
+        
+        if (ows10==2) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ5
+        String hardLevels4=JOptionPane.showInputDialog("About how many light years across is the Milky Way? Is it:"+"\n1. 1,000"
+                +"\n2. 10,000"+"\n3. 100,000"+"\n4. 1,000,000");
+       
+        int ows11=Integer.parseInt(hardLevels4);
+                
+        int years1=1;
+        int years2=2;
+        int years3=3;
+        int years4=4;
+        
+        if (ows11==3) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        JOptionPane.showMessageDialog( null,
+            "RESULTS:\n" +
+            "Correct Answers: " + correctAnswers + "\n" +
+            "Total Money Earned: " + money,
+            "Thank you for playing",JOptionPane.INFORMATION_MESSAGE);
+   }
+}
