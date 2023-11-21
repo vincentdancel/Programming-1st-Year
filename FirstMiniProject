@@ -1,0 +1,79 @@
+JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ2
+         String hardLevels1=JOptionPane.showInputDialog("The sunspot cycle is? "+"\n1. 3 years"
+                +"\n2. 11 years"+"\n3. 26 years"+"\n4. 49 years");
+       
+        int choice8=Integer.parseInt(hardLevels1);
+                
+        int rightAnswer8=2;
+         
+        if (choice8==2) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ3
+        String hardLevels2=JOptionPane.showInputDialog("The Hertzsprung-Russel Diagram of stars DIRECTLY compares\n" +
+"what TWO of the following properties of stars? "+"\n1. size"
+                +"\n2. temperature"+"\n3. luminosity"+"\n4. density");
+       
+        int choice9=Integer.parseInt(hardLevels2);
+                
+        int rightAnswer9=3;
+            
+        if (choice9==3) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ4
+         String hardLevels3=JOptionPane.showInputDialog("The andromeda Galaxy is which of the following types of galaxies?"+"\n1. elliptical"
+                +"\n2. spiral"+"\n3. barred-spiral"+"\n4. irregular");
+       
+        int choice10=Integer.parseInt(hardLevels3);
+                
+        int rightAnswer10=2;
+        
+        if (choice10==2) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //hardQ5
+        String hardLevels4=JOptionPane.showInputDialog("About how many light years across is the Milky Way? Is it:"+"\n1. 1,000"
+                +"\n2. 10,000"+"\n3. 100,000"+"\n4. 1,000,000");
+       
+        int choice11=Integer.parseInt(hardLevels4);
+                
+        int rightAnswer11=3;
+  
+        if (choice11==3) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        JOptionPane.showMessageDialog( null,
+            "RESULTS:\n" +
+            "Correct Answers: " + correctAnswers + "\n" +
+            "Total Money Earned: " + money,
+            "Thank you for playing",JOptionPane.INFORMATION_MESSAGE);
+   }
+}
