@@ -1,4 +1,179 @@
-JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+package miniproject;
+
+import  javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Student
+ */
+
+public class MiniProject {
+    public static void main(String[] args) {
+        //This asimple game that consist of three consecutive levels (Easy, Medium, and Hard), where players are presented with sets of questions with multiple choices.
+        //The objective of this game is to choice the correct answers and earn money based on the level of difficulty. 
+        //Where, each question in easy level can get 100 money prize, in medium level can get 200 money prize, and hard level can get 500 money prize.
+        //The incorrect answers will automatically presented as wrong. 
+        //Once the players done answering the all questions will display all the money earned based on correct answer.
+        
+        int money=0;
+        int correctAnswers=0;
+        
+        String greetings;
+          JOptionPane.showMessageDialog(null,"Welcome to Astronomy Quiz, Quizzards!");
+        
+        String response;
+          JOptionPane.showMessageDialog(null,"There are 3 consecutive levels:"+"\nEASY"+"\nMEDIUM"+"\nHARD");
+        
+        String responsev1;
+          JOptionPane.showMessageDialog(null,"Choose the NUMBER of your correct answer!");
+        
+        String response2;
+          JOptionPane.showMessageDialog(null,"Let's start with EASY LEVEL, GOODLUCK!"+"\nYou can get 100 money prize each question if you get the correct answer");
+        
+        //EASY LEVEL
+        //EasyQ1
+        String easyLevels1=JOptionPane.showInputDialog("How many planets in Solar Systems?"+"\n1. eight"+"\n2. nine"+"\n3. ten"+"\n4. six");
+        
+        //the user input the answer
+        int choice=Integer.parseInt(easyLevels1);
+                
+        int rightAnswer=1;
+        
+        //if the user's choice equal to the  
+        if (choice==1) {
+            money+=100;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //EasyQ2
+        String easyLevels2=JOptionPane.showInputDialog("Planet that called Gas Planet?"+"\n1. Mars"+"\n2.Jupiter"+"\n3.Mercury"+"\n4.Earth");
+       
+        int choice1=Integer.parseInt(easyLevels2);
+                
+        int rightAnswer1=2;
+        
+        if (choice1==2) {
+            money+=100;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //EasyQ3
+         String easyLevels3=JOptionPane.showInputDialog("Which is the second planet from the sun?"+"\n1. Mars"+"\n2.Jupiter"+"\n3.Mercury"+"\n4.Venus");
+       
+        int choice2=Integer.parseInt(easyLevels3);
+              
+        int rightAnswer2=4;
+        
+        if (choice2==4) {
+            money+=100;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+         //MEDIUM LEVEL
+        
+        String response3;
+          JOptionPane.showMessageDialog(null,"GOOD! Now let's move on to MEDIUM LEVEL, GOODLUCK!"+"\nYou can get 200 money prize each question if you get the correct answer");
+        
+        //medQ1
+        String mediumLevels=JOptionPane.showInputDialog("How old is the Universe?"+"\n1. 10.7 billion years ago"
+                +"\n2. 9.7 billion years ago"+"\n3. 13.7 million years ago"+"\n4. 13.7 billion years ago");
+       
+        int choice3=Integer.parseInt(mediumLevels);
+                
+        int rightAnswer3=4;
+        
+        if (choice3==4) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //medQ2
+        String mediumLevels1=JOptionPane.showInputDialog("How many constellations are there?"+"\n1. 80"
+                +"\n2. 88"+"\n3. 90"+"\n4. 81");
+       
+        int choice4=Integer.parseInt(mediumLevels1);
+                
+        int rightAnswer4=2;
+        
+        if (choice4==2) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //medQ3
+         String mediumLevels2=JOptionPane.showInputDialog("What are the storms produced by the sun called?"+"\n1. Solar Flare"
+                +"\n2. Solar Wind"+"\n3. Solar Storm"+"\n4. Solar Energy");
+       
+        int choice5=Integer.parseInt(mediumLevels2);
+                
+        int rightAnswer5=3;
+             
+        if (choice5==3) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        
+        //medQ4
+        String mediumLevels3=JOptionPane.showInputDialog("What is the only planet not named after a God?"+"\n1. Earth"
+                +"\n2. Jupiter"+"\n3. Saturn"+"\n4. Neptune");
+       
+        int choice6=Integer.parseInt(mediumLevels3);
+                
+        int rightAnswer6=1;
+        
+        if (choice6==1) {
+            money+=200;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
+        }
+        //HARD LEVEL
+        String response4;
+        JOptionPane.showMessageDialog(null,"VERY GOOD! Now let's move on to HARD LEVEL, GOODLUCK!"+"\nYou can get 500 money prize each question if you get the correct answer");
+        
+        //hardQ1
+        String hardLevels=JOptionPane.showInputDialog("One of the largest volcanos in our solar system-if not the largest-is\n" +
+"named Olympus Mons. This volcano is located on: "+"\n1. Jupiter's moon Callisto"
+                +"\n2. Venus"+"\n3. Saturn's moon Titan"+"\n4. Mars");
+       
+        int choice7=Integer.parseInt(hardLevels);
+                
+        int rightAnswer7=4;
+        
+        if (choice7==4) {
+            money+=500;
+            correctAnswers++;
+            JOptionPane.showMessageDialog(null, "You are correct!", "Congrats!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
         }
         
         //hardQ2
@@ -69,7 +244,6 @@ JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOp
         else {
             JOptionPane.showMessageDialog(null,"You are wrong!","Better luck next time!",JOptionPane.ERROR_MESSAGE);  
         }
-        
         JOptionPane.showMessageDialog( null,
             "RESULTS:\n" +
             "Correct Answers: " + correctAnswers + "\n" +
