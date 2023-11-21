@@ -1,0 +1,51 @@
+package patient1;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author DANCELV_ICS102
+ */
+public class Patient1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        String idNum=JOptionPane.showInputDialog("ENTER YOUR ID NUMBER!");       
+        String lastName=JOptionPane.showInputDialog("ENTER YOUR LASTNAME!");       
+        String firstName=JOptionPane.showInputDialog("ENTER YOUR FIRSTNAME!");
+           
+        String response;
+         JOptionPane.showMessageDialog(null,"Input"+"\nF= failed in test!"+"\nP=passed in test!");
+         
+        String testOne=JOptionPane.showInputDialog(" TEST 1 RESULT:");
+        String testTwo=JOptionPane.showInputDialog(" TEST 2 RESULT:");
+        String testThree=JOptionPane.showInputDialog( " TEST 3 RESULT:");
+        
+        String remarks = determineRemarks(testOne,testTwo,testThree);
+        JOptionPane.showMessageDialog(null,"ID number: " + idNum + "Lastname: "+lastName+"\nFirstname: "+firstName+"\nTest 1 Result: "+testOne+
+                "\nTest 2 Result: "+testTwo+"\nTest 3 Result: "+testThree+"\nRemarks: "+remarks);
+    
+    }
+        public static String determineRemarks (String testOne,String testTwo,String testThree){
+       int count = 0;
+       
+       if (testOne.equalsIgnoreCase("P")) {
+           count++;
+        }
+        if (testTwo.equalsIgnoreCase("P")) {
+           count++;
+        }
+        if (testThree.equalsIgnoreCase ("P")) {
+           count++;
+           }
+        if (count >= 2) {
+               return "DISCHARGED";
+           }
+           else {
+               return "RETAINED";
+           }
+        }
+}
