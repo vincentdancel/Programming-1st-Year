@@ -1,0 +1,50 @@
+package collegegrade;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Student
+ */
+public class CollegeGrade {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       
+        while (true) {
+        String response1= JOptionPane.showInputDialog(null,"Please input your grade.");
+        double grade=Double.parseDouble(response1);
+       
+        if (( grade >=1.0) && ( grade <=3.0)) {
+            JOptionPane.showMessageDialog(null,"Remarks: Passed");
+        }
+        else if (( grade >= 3.1) && (grade <=5.0)) {
+            JOptionPane.showMessageDialog(null,"Remarks: Failed");  
+        }
+        else if ( grade == 6.0) {
+            JOptionPane.showMessageDialog(null," Remarks: Withdrawn"); 
+        }
+        else if (grade == 7.0) {
+            JOptionPane.showMessageDialog(null," Remarks: Dropped"); 
+        }
+        else if (grade == 8.0) {
+            JOptionPane.showMessageDialog(null,"Remarks: Incompletee");
+        }
+        else if (grade == 9.0){
+            JOptionPane.showMessageDialog(null,"Remarks: No grade");
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Out of Range");
+        }
+        
+        int entergradeAgain= JOptionPane.showConfirmDialog(null,"Do you want to enter another grade? (y/n): ","Confirmation", JOptionPane.YES_NO_OPTION);
+        
+        if (entergradeAgain == JOptionPane.NO_OPTION) {
+            System.exit(0);
+        }
+      
+        }
+}
+}
