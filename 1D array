@@ -1,0 +1,73 @@
+package DaysOfWeek;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Create an array of days of the week
+        String[] daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+
+        // Print the days of the week
+        for (int d = 0; d < daysOfWeek.length; d++) {
+            System.out.println(daysOfWeek[d]);
+        }
+    }
+}
+
+//////////////////////
+public class PhoneBrands {
+
+    public static void main(String[] args) {
+        // Create an array of phone brands
+        String[] phone = {"Apple", "Samsung", "Huawei", "Xiaomi", "OPPO", "Vivo", "LG", "Motorola", "Nokia", "Sony"};
+
+        phone[0] = "Xiaomi";
+       
+        System.out.println(phone[0]);
+    }
+}
+
+///////////////////////
+
+public class SumAndAve {
+
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 15, 20, 25};
+
+        //calculate the sum
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        //calculate the average
+        double average = (double) sum / numbers.length;
+
+        //display the sum and average
+        System.out.println("The sum of the numbers is:" + sum);
+        System.out.println("The average of the numbers is:" + average);
+
+    }
+}
+/////////////////////////
+public class MatchElement {
+
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 1, 8, 5};
+
+        int targetNum = 2;
+
+        boolean numberChoice = false;
+        for (int number : nums) {
+            if (number == targetNum) {
+                numberChoice = true;
+                break;
+            }
+        }
+
+        if (numberChoice) {
+            System.out.println("The number " + targetNum + " is in the array.");
+        } else {
+            System.out.println("The number " + targetNum + " is not in the array.");
+        }
+    }
+}
