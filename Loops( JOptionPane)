@@ -1,0 +1,12 @@
+while ( true) {
+
+
+int playAgain= JOptionPane.showConfirmDialog(null,"Do you want to play again?","Confirmation", JOptionPane.YES_NO_OPTION);
+        
+        if (playAgain == JOptionPane.NO_OPTION) {
+            System.exit(0);
+        }
+        
+        }
+    }   
+}
