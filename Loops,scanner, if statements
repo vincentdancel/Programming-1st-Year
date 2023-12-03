@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		//Create a program that prompts the user to input 5 numbers using Scanner Class, get the sum, and ask the user to try again. Press 'y' for yes and 'n' for no. The class name is AddNumber.
+		
+		while (true) {
+    Scanner scan=new Scanner(System.in) ;
+		
+		System.out.println("Please input five numbers. ");
+		int num=scan.nextInt();
+		int num1=scan.nextInt();
+		int num2=scan.nextInt();
+		int num3=scan.nextInt();
+		int num4=scan.nextInt();
+		
+		int total= num+num1+num2+num3+num4;
+		
+		System.out.println("Total:"+total);
+		
+		System.out.println(" Do you want to input again? y/n:");
+		char choice= scan.next().charAt(0);
+		
+		if (choice=='n') {
+		    System.exit(0);
+		}
+		
+			
+}			
+	}
+}
