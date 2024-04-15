@@ -1,0 +1,46 @@
+package studentlist;
+
+import java.util.Scanner;
+
+public class StudentList {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String[][] arr = new String[3][3];
+      
+        System.out.println("Input Number of Students:");
+        int list = input.nextInt();
+
+        for (int row = 0; row < arr.length; row++) {
+            System.out.println("please input your ID Number, Name,and Course");
+            for (int col = 0; col < arr.length; col++) {
+                arr[row][col] = input.next();
+            }
+        }
+
+        String idNo = "", name = "", course = "";
+
+        System.out.printf("%-5.10s %-20.40s %28.30s", "ID #", "Name", "Course\n");
+
+        for (int row = 0; row < arr.length; row++) {
+            for (int col = 0; col < arr.length; col++) {
+
+                if (col == 0) {
+                    idNo = arr[row][col];
+                } else if (col == 1) {
+                    name = arr[row][col];
+                } else {
+                    course = arr[row][col];
+                }
+
+            }
+            System.out.printf("%-5.10s %-20.40s %28.30s", idNo, name, course + "\n");
+
+        }
+        
+        
+    }
+    
+}
