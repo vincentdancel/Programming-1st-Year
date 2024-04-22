@@ -1,0 +1,103 @@
+import java.util.Scanner;
+
+public class StudentLists {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String[][] studentInformation = new String[100][5];
+        int count = 0;
+
+        while (true) {
+            System.out.println("Choose an option:\n"
+                    + "1. Add Student\n"
+                    + "2. Edit/Update Information\n"
+                    + "3. Delete Student Information\n"
+                    + "4. Display\n"
+                    + "5. Exit");
+
+            int option = input.nextInt();
+
+            switch (option) {
+                case 1:
+                    addStudent(input, studentInformation, count);
+                    count++;
+                    break;
+
+                case 2:
+                    editStudent(input, studentInformation, count);
+                    break;
+
+                case 3:
+                    deleteStudent(input, studentInformation, count);
+                    count--;
+                    break;
+
+                case 4:
+                    displayStudentInformation(studentInformation, count);
+                    break;
+
+                case 5:
+                    System.out.println("Exiting");
+                    System.exit(0);
+
+                default:
+                    System.out.println("Invalid option.");
+            }
+        }
+    }
+
+    private static void addStudent(Scanner input, String[][] studentInformation, int count) {
+        System.out.print("Enter ID Number: ");
+        studentInformation[count][0] = input.next();
+        System.out.print("Enter First Name: ");
+        studentInformation[count][1] = input.next();
+        System.out.print("Enter Last Name: ");
+        studentInformation[count][2] = input.next();
+        System.out.print("Enter Course: ");
+        studentInformation[count][3] = input.next();
+        System.out.print("Enter Year Level: ");
+        studentInformation[count][4] = input.next();
+    }
+
+    private static void editStudent(Scanner input, String[][] studentInformation, int count) {
+        System.out.print("Enter ID Number to Edit: ");
+        String idToEdit = input.next();
+
+        for (int i = 0; i < count; i++) {
+            if (studentInformation[i][0].equals(idToEdit)) {
+                System.out.print("Enter new ID Number: ");
+                studentInformation[i][0] = input.next();
+                System.out.println("ID Number updated successfully.");
+                return;
+            }
+        }
+        System.out.println("ID Number not found.");
+    }
+
+    private static void deleteStudent(Scanner input, String[][] studentInformation, int count) {
+        System.out.print("Enter ID Number to Delete: ");
+        String idToDelete = input.next();
+
+        for (int i = 0; i < count; i++) {
+            if (studentInformation[i][0].equals(idToDelete)) {
+                for (int j = i; j < count - 1; j++) {
+                    studentInformation[j] = studentInformation[j + 1];
+                }
+                System.out.println("Student with ID Number " + idToDelete + " deleted successfully.");
+                return;
+            }
+        }
+        System.out.println("ID Number not found.");
+    }
+
+    private static void displayStudentInformation(String[][] studentInformation, int count) {
+        System.out.println("Student Information:");
+        for (int i = 0; i < count; i++) {
+            System.out.println("ID Number: " + studentInformation[i][0]);
+            System.out.println("Name: " + studentInformation[i][1] + " " + studentInformation[i][2]);
+            System.out.println("Course: " + studentInformation[i][3] + "-" + studentInformation[i][4] + "\n");
+        }
+    }
+}
