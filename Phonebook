@@ -1,0 +1,160 @@
+package midexam;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String[][] Contacts = new String[100][5];
+        int count = 0;
+
+        while (true) {
+
+            System.out.println("\n");
+            System.out.println("Choose an option:\n"
+                    + "1. Add Contact\n"
+                    + "2. Update Contact\n"
+                    + "3. Delete Contact\n"
+                    + "4. Show the phonebook Content \n"
+                    + "5. Exit");
+
+            int option = input.nextInt();
+
+            System.out.println("\n");
+
+            switch (option) {
+                case 1:
+                    addContact(input, Contacts, count);
+                    count++;
+                    break;
+
+                case 2:
+                    updateContact(input, Contacts, count);
+                    break;
+
+                case 3:
+                    deleteContact(input, Contacts, count);
+                    count--;
+                    break;
+
+                case 4:
+                    displayContact(Contacts, count);
+                    break;
+
+                case 5:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+
+                default:
+                    System.out.println("Invalid option.");
+            }
+        }
+    }
+
+    private static void addContact(Scanner input, String[][] Contacts, int count) {
+        System.out.print("Enter Phone Number: ");
+        Contacts[count][0] = input.next();
+        System.out.print("Enter Last Name: ");
+        Contacts[count][1] = input.next();
+        System.out.print("Enter First Name: ");
+        Contacts[count][2] = input.next();
+
+    }
+
+    private static void updateContact(Scanner input, String[][] Contacts, int count) {
+        while (true) {
+
+            System.out.println("\n");
+            System.out.println("Choose an option:\n"
+                    + "1. Phone Number\n"
+                    + "2. Last Name\n"
+                    + "3. First Name\n"
+                    + "4. Cancel");
+
+            int option = input.nextInt();
+
+            System.out.println("\n");
+
+            if (option == 4) {
+                System.out.println("Cancelling...\n");
+                return;
+            }
+
+            switch (option) {
+                case 1:
+                    System.out.print("Enter Phone Number to Update: ");
+                    String phoneNumToUp = input.next();
+                    for (int i = 0; i < count; i++) {
+                        if (Contacts[i][0].equals(phoneNumToUp)) {
+                            System.out.print("Enter new Phone Number: ");
+                            Contacts[i][0] = input.next();
+                            System.out.println("Phone Number updated successfully.\n");
+                            return;
+                        }
+                    }
+                    System.out.println("Phone Number not found.\n");
+                    break;
+
+                case 2:
+                    System.out.print("Enter Last Name to Update: ");
+                    String lastNameToUp = input.next();
+                    for (int i = 0; i < count; i++) {
+                        if (Contacts[i][1].equals(lastNameToUp)) {
+                            System.out.print("Enter new Last Name: ");
+                            Contacts[i][1] = input.next();
+                            System.out.println("Last Name updated successfully.\n");
+                            return;
+                        }
+                    }
+                    System.out.println("Last Name not found.\n");
+                    break;
+
+                case 3:
+                    System.out.print("Enter First Name to Update: ");
+                    String firstNameToUp = input.next();
+                    for (int i = 0; i < count; i++) {
+                        if (Contacts[i][2].equals(firstNameToUp)) {
+                            System.out.print("Enter new First Name: ");
+                            Contacts[i][2] = input.next();
+                            System.out.println("First Name updated successfully.\n");
+                            return;
+                        }
+                    }
+                    System.out.println("First Name not found.");
+                    break;
+
+                default:
+                    System.out.println("Invalid option, please choose again.\n");
+                    break;
+            }
+        }
+
+    }
+
+    private static void deleteContact(Scanner input, String[][] Contacts, int count) {
+        System.out.print("Enter Phone Number to Delete: ");
+        String idToDelete = input.next();
+
+        for (int i = 0; i < count; i++) {
+            if (Contacts[i][0].equals(idToDelete)) {
+                for (int j = i; j < count - 1; j++) {
+                    Contacts[j] = Contacts[j + 1];
+                }
+                System.out.println("Phone Number: " + idToDelete + " deleted successfully.\n");
+                return;
+            }
+        }
+        System.out.println("Phone Number not found.\n");
+    }
+
+    private static void displayContact(String[][] Contacts, int count) {
+        System.out.println("PHONEBOOK:\n");
+        for (int i = 0; i < count; i++) {                
+            System.out.println("("+"Name: "+ Contacts[i][2] + Contacts[i][1] + " " +  "Phone Number: " + Contacts[i][0]+")" );
+        }
+
+    }
+}
