@@ -1,0 +1,51 @@
+package file;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class File {
+
+    public static void main(String[] args) {
+   
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of sets: ");
+        int numberSets = scanner.nextInt();
+
+        int[][] sets = new int[numberSets][];
+
+        // Write sets to file
+        try (FileWriter writer = new FileWriter("sets.txt")) {
+            for (int i = 0; i < numberSets; i++) {
+                System.out.print("Enter the size of set " + (i + 1) + ": ");
+                int setSize = scanner.nextInt();
+                sets[i] = new int[setSize];
+
+                System.out.print("Enter the elements of set " + (i + 1) + ": ");
+                for (int j = 0; j < setSize; j++) {
+                    sets[i][j] = scanner.nextInt();
+                }
+
+                // Write set to file
+                writer.write("Set " + (i + 1) + ": ");
+                for (int j = 0; j < setSize; j++) {
+                    writer.write(sets[i][j] + " ");
+                }
+                writer.write("\n");
+            }
+        } catch (IOException e) {
+             e.printStackTrace();
+        }
+
+        // Read sets from file
+        try (BufferedReader reader = new BufferedReader(new FileReader("sets.txt"))) {
+            String line;
+            System.out.println("\nContents of the file:");
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+             e.printStackTrace();
+        }
+    }
+}
