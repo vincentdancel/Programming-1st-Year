@@ -1,4 +1,3 @@
-
 package javaapplication26;
 import java.io.*;
 import java.util.*;
@@ -50,7 +49,10 @@ public class JavaApplication26 {
             double price = scanner.nextDouble();
             scanner.nextLine(); 
 
-            writer.println("Item Name:" + name + '\n' + "Quantity:" + quantity + '\n' + "Price:" + price + '\n');
+            writer.println("Item Name:" + name);
+            writer.println("Quantity:" + quantity);
+            writer.println("Price:" + price);
+            writer.println();
 
             System.out.println("Item added successfully.");
         } catch (IOException e) {
@@ -61,7 +63,8 @@ public class JavaApplication26 {
     private static void displayAllItems() {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILENAME))) {
             String line;
-            while ((line = reader.readLine())!= null) {
+            while ((line = reader.readLine()) != null) {
+                if (line.trim().isEmpty()) continue; // skip empty lines
                 System.out.println(line);
             }
         } catch (IOException e) {
@@ -70,37 +73,35 @@ public class JavaApplication26 {
     }
 
     private static void removeItem() {
-        try {
-            Scanner scanner = new Scanner(new File(FILENAME));
-            StringBuilder fileContent = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILENAME))) {
+            Scanner scanner = new Scanner(System.in);
             System.out.print("Enter item name to remove: ");
             String nameToRemove = scanner.nextLine();
+            StringBuilder fileContent = new StringBuilder();
             boolean found = false;
 
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if (line.contains("Item Name:" + nameToRemove)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.startsWith("Item Name:" + nameToRemove)) {
                     found = true;
-                    // Skipping item details
-                    for (int i = 0; i < 2; i++) {
-                        scanner.nextLine();
-                    }
+                    // Skip the next two lines (Quantity and Price)
+                    reader.readLine();
+                    reader.readLine();
+                    reader.readLine(); // skip the blank line
                 } else {
-                    fileContent.append(line).append('\n');
+                    fileContent.append(line).append(System.lineSeparator());
                 }
             }
-
-            scanner.close();
 
             if (!found) {
                 System.out.println("Item not found.");
                 return;
             }
 
-            PrintWriter writer = new PrintWriter(new FileWriter(FILENAME));
-            writer.print(fileContent);
-            writer.close();
-            
+            try (PrintWriter writer = new PrintWriter(new FileWriter(FILENAME))) {
+                writer.print(fileContent.toString());
+            }
+
             System.out.println("Item removed successfully.");
         } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
@@ -111,11 +112,11 @@ public class JavaApplication26 {
         double totalValue = 0.0;
         try (BufferedReader reader = new BufferedReader(new FileReader(FILENAME))) {
             String line;
-            while ((line = reader.readLine())!= null) {
+            while ((line = reader.readLine()) != null) {
                 if (line.startsWith("Quantity:")) {
-                    int quantity = Integer.parseInt(line.substring(9));
+                    int quantity = Integer.parseInt(line.substring(9).trim());
                     line = reader.readLine(); // Move to next line which should contain price
-                    double price = Double.parseDouble(line.substring(6));
+                    double price = Double.parseDouble(line.substring(6).trim());
                     totalValue += quantity * price;
                 }
             }
@@ -125,5 +126,3 @@ public class JavaApplication26 {
         }
     }
 }
-    
-    
