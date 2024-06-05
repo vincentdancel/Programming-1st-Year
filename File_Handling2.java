@@ -70,24 +70,6 @@ public class FinalProjects {
             System.err.println("Error: " + e.getMessage());
         }
     }
-
-
-    // Method to calculate and display the inventory value
-    private static void calculateInventoryValue() {
-        double totalValue = 0.0;
-        try (BufferedReader reader = new BufferedReader(new FileReader(FILENAME))) {
-            String line;
-            while ((line = reader.readLine())!= null) {
-                if (line.startsWith("Quantity:")) {
-                    int quantity = Integer.parseInt(line.substring(9));
-                    line = reader.readLine(); // Move to next line which should contain price
-                    double price = Double.parseDouble(line.substring(6));
-                    totalValue += quantity * price;
-                }
-            }
-            System.out.println("Total Inventory Value: $" + totalValue);
-        } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
-        }
+    
     }
-}
+
