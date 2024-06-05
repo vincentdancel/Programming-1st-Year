@@ -1,6 +1,6 @@
 
 package javaapplication26;
-   import java.io.*;
+import java.io.*;
 import java.util.*;
 
 public class JavaApplication26 {
